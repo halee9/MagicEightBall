@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Ha Lee">
+  <title>Magic Eight Ball</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Magic Eight Ball</h2>
+  <script>
+    // Initailize variables
+    const eightballs = [
+      "Yes, definitely.",
+      "Outlook good.",
+      "Ask again later.",
+      "Better not tell you now.",
+      "My sources say no.",
+      "Very doubtful.",
+      "Without a doubt.",
+      "Cannot predict now.",
+    ];
+    // Promt for user name
+    let userName = prompt("What is your name?");
+
+    while (true) {
+      // Prompt for user question
+      let userQuestion = prompt("What is your question? Type Stop if you want to stop the game.");
+      // Check if user question is "Stop"
+      if (userQuestion.toLowerCase() === "stop") {
+        break;
+      }
+      // Generate random number
+      let randomNumber = Math.floor(Math.random() * eightballs.length);
+      // Generate random response
+      let eightBall = eightballs[randomNumber];
+      // Alert the answer
+      alert(eightBall);  
+    }
+
+    // Alert Goodbye
+    alert("Good bye, " + userName + "!");
+  </script>
+</body>
+
+</html>
