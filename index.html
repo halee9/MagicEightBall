@@ -25,12 +25,15 @@
     ];
     // Promt for user name
     let userName = prompt("What is your name?");
+    if (userName === null) {
+      userName = "User";
+    }
 
     while (true) {
       // Prompt for user question
-      let userQuestion = prompt("What is your question? Type Stop if you want to stop the game.");
-      // Check if user question is "Stop"
-      if (userQuestion.toLowerCase() === "stop") {
+      let userQuestion = prompt("What is your question? Type Stop or press Cancel if you want to stop the game.");
+      // Check if user question is "Stop" or press Cancel
+      if (userQuestion === null || userQuestion.toLowerCase() === "stop") {
         break;
       }
       // Generate random number
@@ -38,7 +41,7 @@
       // Generate random response
       let eightBall = eightballs[randomNumber];
       // Alert the answer
-      alert(eightBall);  
+      alert(eightBall);
     }
 
     // Alert Goodbye
